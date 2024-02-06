@@ -50,7 +50,7 @@ export const plugin = {
                                     .replace(/^\/?wizard\//, '');
                             }
 
-                            if (/^[0-9a-z]{13}$/.test(params.name)) {
+                            if (/^[0-9a-zA-Z._]+$/.test(params.name)) {
                                 // If params.name looks like id - use it as id.
                                 body.id = params.name;
 
