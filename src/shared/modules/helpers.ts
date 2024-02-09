@@ -30,9 +30,14 @@ import {
 import {isMeasureName} from './wizard-helpers';
 
 function getEntryId(str: string): string | null {
-    const possibleEntryId = str.slice(0, ENTRY_ID_LENGTH);
+    const possibleEntryId = str.split('-', 4).join('-');
+
+    if (possibleEntryId === 'workbooks') {
+        return null;
+    }
+
     const isEntryIdResult = isEntryId(possibleEntryId);
-    if (isEntryIdResult && str.length === ENTRY_ID_LENGTH) {
+    if (isEntryIdResult) {
         return possibleEntryId;
     }
     if (isEntryIdResult && str[ENTRY_ID_LENGTH] === ENTRY_SLUG_SEPARATOR) {
@@ -255,7 +260,7 @@ export function getObjectValueByPossibleKeys<T>(possibleKeys: string[], obj: Rec
 }
 
 export const isEntryId = (value: string) => {
-    const ENTRY_ID_FORMAT = /^[0-9a-z]{13}$/;
+    const ENTRY_ID_FORMAT = /^[0-9a-z-]+$/;
     return ENTRY_ID_FORMAT.test(value);
 };
 
