@@ -50,9 +50,11 @@ export const plugin = {
                                     .replace(/^\/?editor\//, '')
                                     .replace(/^\/?wizard\//, '');
                             }
-
-                            const isEntryId = registry.common.functions.get('isEntryId');
-                            if (isEntryId(params.name)) {
+                            if (
+                                /^[a-z0-9]{1,8}-[a-z0-9]{1,8}-[a-z0-9]{1,8}-[a-z0-9]{1,8}$/.test(
+                                    params.name,
+                                )
+                            ) {
                                 // If params.name looks like id - use it as id.
                                 body.id = params.name;
 
