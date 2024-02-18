@@ -14,8 +14,8 @@ import {
     REQUEST_ID_HEADER,
     SuperuserHeader,
     TENANT_ID_HEADER,
+    CSRF_TOKEN_HEADER,
 } from '../../shared';
-import {isOpensourceInstallation} from '../app-env';
 
 class Utils {
     static getName(key = '') {
@@ -33,11 +33,8 @@ class Utils {
             TENANT_ID_HEADER,
             PROJECT_ID_HEADER,
             subjectTokenHeader,
+            CSRF_TOKEN_HEADER,
         ];
-
-        if (isOpensourceInstallation) {
-            headersList = [];
-        }
 
         return pick(headers, headersList);
     }

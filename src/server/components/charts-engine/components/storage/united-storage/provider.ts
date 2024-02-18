@@ -19,6 +19,7 @@ import {
     US_PUBLIC_API_TOKEN_HEADER,
     WORKBOOK_ID_HEADER,
     WorkbookId,
+    CSRF_TOKEN_HEADER,
 } from '../../../../../../shared';
 import {createErrorHandler} from '../../error-handler';
 import {getDuration} from '../../utils';
@@ -138,6 +139,8 @@ const PASSED_HEADERS = [
     DL_EMBED_TOKEN_HEADER,
 
     DL_COMPONENT_HEADER,
+
+    CSRF_TOKEN_HEADER,
 ];
 
 const DEFAULT_MAX_BODY_LENGTH = 15 * 1024 * 1024; // 100 MB

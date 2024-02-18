@@ -63,7 +63,9 @@ export default {
         return {
             bi: {
                 dataEndpoint: sources.bi,
-                passedCredentials: {},
+                passedCredentials: {
+                    dloveryt: true  // content of these maps is never used
+                },
                 description: {
                     title: {
                         ru: 'DataLens BI',
@@ -73,7 +75,9 @@ export default {
             },
             bi_connections: {
                 dataEndpoint: sources.bi_connections,
-                passedCredentials: {},
+                passedCredentials: {
+                    dloveryt: true
+                },
                 description: {
                     title: {
                         ru: 'DataLens BI Connections',
@@ -83,7 +87,9 @@ export default {
             },
             bi_datasets: {
                 dataEndpoint: sources.bi_datasets,
-                passedCredentials: {},
+                passedCredentials: {
+                    dloveryt: true
+                },
                 description: {
                     title: {
                         ru: 'DataLens BI Datasets',
@@ -93,7 +99,9 @@ export default {
             },
             bi_datasets_embed: {
                 dataEndpoint: sources.bi_datasets_embed,
-                passedCredentials: {},
+                passedCredentials: {
+                    dloveryt: true
+                },
                 description: {
                     title: {
                         ru: 'DataLens BI Datasets Embed',
@@ -103,7 +111,9 @@ export default {
             },
             bi_connections_embed: {
                 dataEndpoint: sources.bi_connections_embed,
-                passedCredentials: {},
+                passedCredentials: {
+                    dloveryt: true
+                },
                 description: {
                     title: {
                         ru: 'DataLens BI Connections Embed',

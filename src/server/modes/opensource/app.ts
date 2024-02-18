@@ -15,6 +15,7 @@ import {
     xDlContext,
 } from '../../middlewares';
 import {registry} from '../../registry';
+import {getSourceAuthorizationHeaders} from '../../components/charts-engine/components/utils';
 import {initChartsEngine} from '../charts/init-charts-engine';
 import {configuredDashApiPlugin} from '../charts/plugins/dash-api';
 import {plugin as ql} from '../charts/plugins/ql';
@@ -26,6 +27,10 @@ import {getRoutes} from './routes';
 export default function initApp(nodekit: NodeKit) {
     const beforeAuth: AppMiddleware[] = [];
     const afterAuth: AppMiddleware[] = [];
+
+    registry.common.functions.register({
+        getSourceAuthorizationHeaders,
+    });
 
     registry.setupXlsxConverter(xlsxConverter);
 
