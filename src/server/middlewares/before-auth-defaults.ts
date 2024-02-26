@@ -28,5 +28,7 @@ export default async function (req: Request, res: Response, next: NextFunction) 
 
     req.originalContext.set('i18n', i18n);
 
+    req.headers['x-csrf-token'] = req.cookies['CSRF-TOKEN'];
+
     next();
 }

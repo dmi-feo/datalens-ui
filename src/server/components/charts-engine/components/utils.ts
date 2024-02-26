@@ -5,9 +5,7 @@ import {
     resolveIntervalDate as sharedResolveIntervalDate,
     resolveOperation as sharedResolveOperation,
     resolveRelativeDate as sharedResolveRelativeDate,
-    CSRF_TOKEN_HEADER
 } from '../../../../shared';
-import {Request} from '@gravity-ui/expresskit';
 
 const SENSITIVE_PARAMS_NAMES = ['password', 'pass', 'token'];
 const HIDDEN_SENSITIVE_VALUE = '<hidden>';
@@ -152,15 +150,12 @@ export function hideSensitiveData<T extends Test>(data: T = '' as T): T {
 
  // eslint-disable-next-line complexity
  export function getSourceAuthorizationHeaders({
-     req,
      subrequestHeaders,
  }: {
-     req: Request;
      subrequestHeaders: Record<string, string>;
  }): Record<string, string> {
      const authHeaders: Record<string, string> = {};
 
      authHeaders.cookie = subrequestHeaders.cookie;
-     authHeaders[CSRF_TOKEN_HEADER] = req.headers[CSRF_TOKEN_HEADER] as string;
      return authHeaders;
  }

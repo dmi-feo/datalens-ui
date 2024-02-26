@@ -213,8 +213,7 @@ export default class Utils {
     }
 
     static getCSRFToken() {
-        const csrfMetaTag: HTMLMetaElement | null = document.querySelector('meta[name=csrf-token]');
-        return csrfMetaTag ? csrfMetaTag.content : null;
+           return Utils.getCookie('CSRF-TOKEN');
     }
 
     static isEnabledFeature(featureName: string) {
