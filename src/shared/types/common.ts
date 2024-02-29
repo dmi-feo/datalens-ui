@@ -201,6 +201,8 @@ export type DLGlobalData = {
     chartkitSettings?: ChartkitGlobalSettings;
     extraPalettes?: Record<string, Palette>;
     headersMap?: Record<string, string>;
+    chytConnectionId: string;
+    chytTempDatasetWorkbookId: string;
 } & MainLayoutConfigData;
 
 export type ContactDialogSettings = {

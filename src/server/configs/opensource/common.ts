@@ -47,6 +47,9 @@ export default {
     },
     usMasterToken: process.env.US_MASTER_TOKEN || 'fake-us-master-token',
 
+    chytDefaultConnectionId: process.env.CHYT_DEFAULT_CONN_ID || 'fake-chyt-conn-id',
+    chytTempDatasetWorkbookId: process.env.CHYT_TEMP_DATASET_WORKBOOK_ID || 'fake-chyt-workbook-id',
+
     // CHARTS MODE
 
     allowBodyConfig: false,
@@ -64,7 +67,7 @@ export default {
             bi: {
                 dataEndpoint: sources.bi,
                 passedCredentials: {
-                    dloveryt: true  // content of these maps is never used
+                    dloveryt: true, // content of these maps is never used
                 },
                 description: {
                     title: {
@@ -76,7 +79,7 @@ export default {
             bi_connections: {
                 dataEndpoint: sources.bi_connections,
                 passedCredentials: {
-                    dloveryt: true
+                    dloveryt: true,
                 },
                 description: {
                     title: {
@@ -88,7 +91,7 @@ export default {
             bi_datasets: {
                 dataEndpoint: sources.bi_datasets,
                 passedCredentials: {
-                    dloveryt: true
+                    dloveryt: true,
                 },
                 description: {
                     title: {
@@ -100,7 +103,7 @@ export default {
             bi_datasets_embed: {
                 dataEndpoint: sources.bi_datasets_embed,
                 passedCredentials: {
-                    dloveryt: true
+                    dloveryt: true,
                 },
                 description: {
                     title: {
@@ -112,7 +115,7 @@ export default {
             bi_connections_embed: {
                 dataEndpoint: sources.bi_connections_embed,
                 passedCredentials: {
-                    dloveryt: true
+                    dloveryt: true,
                 },
                 description: {
                     title: {

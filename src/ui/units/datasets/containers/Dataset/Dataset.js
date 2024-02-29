@@ -12,6 +12,7 @@ import SplitPane from 'react-split-pane';
 import {compose} from 'recompose';
 import {createStructuredSelector} from 'reselect';
 import {DatasetActionQA, ErrorContentTypes} from 'shared';
+import {DL} from 'ui';
 import {
     addAvatar,
     addSource,
@@ -50,7 +51,6 @@ import DialogCreateDataset from '../../components/DialogCreateDataset/DialogCrea
 import {TAB_DATASET, TAB_SOURCES, VIEW_PREVIEW, getFakeEntry} from '../../constants';
 import DatasetError from '../../containers/DatasetError/DatasetError';
 import DatasetTabViewer from '../../containers/DatasetTabViewer/DatasetTabViewer';
-import {getAutoCreatedYTDatasetKey} from '../../helpers/datasets';
 import DatasetUtils from '../../helpers/utils';
 import {
     UISelector,
@@ -215,7 +215,7 @@ class Dataset extends React.Component {
             this.props.saveDataset({
                 isAuto,
                 isCreationProcess,
-                key: getAutoCreatedYTDatasetKey(ytPath),
+                workbookId: DL.CHYT_TEMP_DATASET_WORKBOOK_ID,
                 history,
             });
         }
@@ -380,7 +380,11 @@ class Dataset extends React.Component {
     };
 
     getWorkbookId() {
-        return this.props.match.params.workbookId || this.props.workbookId;
+        const wbId = this.props.match.params.workbookId || this.props.workbookId;
+        if (wbId === 'fake-chyt-wb-id') {
+            return DL.CHYT_TEMP_DATASET_WORKBOOK_ID;
+        }
+        return wbId;
     }
 
     refreshSources = () => {

@@ -10,6 +10,9 @@ export interface SharedAppConfig {
 
     usMasterToken?: string;
 
+    chytDefaultConnectionId: string;
+    chytTempDatasetWorkbookId: string;
+
     regionalEnvConfig?: {allowLanguages?: string[]; defaultLang?: string; langRegion?: string};
 
     chartsMonitoringEnabled?: boolean;

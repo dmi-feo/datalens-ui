@@ -44,6 +44,9 @@ export const getOpensourceLayoutConfig: GetLayoutConfig = async (args) => {
         lang = Language.En;
     }
 
+    const chytConnectionId = config.chytDefaultConnectionId;
+    const chytTempDatasetWorkbookId = config.chytTempDatasetWorkbookId;
+
     // TODO: check and remove optional props;
     const user: DLUser = {lang} as DLUser;
     const userSettings = {};
@@ -66,6 +69,8 @@ export const getOpensourceLayoutConfig: GetLayoutConfig = async (args) => {
         chartkitSettings: config.chartkitSettings,
         allowLanguages,
         headersMap: req.ctx.config.headersMap,
+        chytConnectionId,
+        chytTempDatasetWorkbookId,
         ...appLayoutSettings.DL,
     };
     const renderConfig: RenderParams<{DL: DLGlobalData}> = {

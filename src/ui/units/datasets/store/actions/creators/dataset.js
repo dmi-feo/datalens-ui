@@ -406,7 +406,6 @@ export function saveDataset({key, workbookId, name, history, isCreationProcess, 
                 const creationData = {
                     dataset,
                     multisource: true,
-                    ...(isAuto && {created_via: 'yt_to_dl'}),
                 };
 
                 if (workbookId) {

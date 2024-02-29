@@ -71,6 +71,12 @@ export const KeyCodes = {
 // and a DL structure with default values must be guaranteed to access, for example, DL.UserSettings.theme,
 // and not DL.USER_THEME (nevertheless, with frequent access, such a thing may be justified)
 export const DL = {
+    get CHYT_CONNECTION_ID() {
+        return window.DL.chytConnectionId;
+    },
+    get CHYT_TEMP_DATASET_WORKBOOK_ID() {
+        return window.DL.chytTempDatasetWorkbookId;
+    },
     get SERVICE_NAME() {
         return window.DL.serviceName;
     },
