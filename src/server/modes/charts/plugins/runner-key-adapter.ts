@@ -3,7 +3,6 @@ import url from 'url';
 import {NextFunction, Request, Response} from '@gravity-ui/expresskit';
 
 import {MiddlewareStage} from '../../../components/charts-engine/types';
-import {registry} from '../../../registry';
 
 export const plugin = {
     middlewares: [
